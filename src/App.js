@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+import CustomerTable from './CustomerTable';
+import ApiContextProvider from './ApiContext';
+import FilterCustomer from './FilterCustomer';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import Layout from './Layout';
+
+
+const App = () => {
+    const router = createBrowserRouter([
+        {path:"",element:<Layout/>,children:[
+            {path:"",element:<Navigate to={"home"}/>},
+            {path:"home",element:<CustomerTable/>},
+            {path:"chart",element:<FilterCustomer/>}
+        ]}
+    ])
+    return (
+        <>
+            {/* <Chart/> */}
+            <ApiContextProvider>
+          <RouterProvider router={router}></RouterProvider>
+            </ApiContextProvider>
+            
+           
+        </>
+    );
+};
 
 export default App;
