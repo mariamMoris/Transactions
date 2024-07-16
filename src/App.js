@@ -6,6 +6,7 @@ import ApiContextProvider from './ApiContext';
 import FilterCustomer from './FilterCustomer';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from './Layout';
+import NotFound from './NotFound';
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
             {path:"Transactions",element:<CustomerTable/>},
             {path:"",element:<Navigate to={"home"}/>},
             {path:"home",element:<CustomerTable/>},
-            {path:"chart",element:<FilterCustomer/>}
+            {path:"chart",element:<FilterCustomer/>},
+            {path:"*",element:<NotFound/>}
         ]}
     ])
     return (
