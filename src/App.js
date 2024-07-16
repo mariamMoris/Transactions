@@ -12,7 +12,6 @@ const App = () => {
     const router = createBrowserRouter([
         {path:"",element:<Layout/>,children:[
             {path:"",element:<Navigate to={"home"}/>},
-            {path:"Transactions",element:<Navigate to={"home"}/>},
             {path:"home",element:<CustomerTable/>},
             {path:"chart",element:<FilterCustomer/>}
         ]}
