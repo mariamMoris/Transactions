@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { Chart as ChartJs,BarElement,  CategoryScale, LinearScale } from 'chart.js'
-import { Bar, Line } from 'react-chartjs-2'
-import { ApiContext } from './ApiContext'
+import { Bar } from 'react-chartjs-2'
+
 
 ChartJs.register(
    CategoryScale,

@@ -6,11 +6,11 @@ export const ApiContext = createContext()
 
 
 function getCustomers(){
-    return axios.get("http://localhost:3000/customers").then((res)=>res).catch((error)=>error)
+    return axios.get("https://raw.githubusercontent.com/mariamMoris/customersApi/main/customers.json").then((res)=>res).catch((error)=>error)
  }
 
  function getTransactions(){
-    return axios.get("http://localhost:3000/transactions").then((res)=>res).catch((error)=>error)
+    return axios.get("https://raw.githubusercontent.com/mariamMoris/transactionsApi/main/transactions.json").then((res)=>res).catch((error)=>error)
  }
 
  export default function ApiContextProvider({children}){
@@ -29,7 +29,7 @@ function getCustomers(){
       }
       useEffect(()=>{
         gettran()
-      },[])
+      })
       const margeData = customers.map((customer)=>{
         return{
             ...customer,

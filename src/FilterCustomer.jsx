@@ -3,7 +3,7 @@ import { ApiContext } from './ApiContext'
 import Chart from './Chart';
 
 export default function FilterCustomer() {
-  const {transactions,customers,margeData} = useContext(ApiContext)
+  const {transactions,margeData} = useContext(ApiContext)
   const [selectedCustomer, setSelectedCustomer] = useState('');
   const handleCustomerSelect = (event) => {
     setSelectedCustomer(event.target.value);

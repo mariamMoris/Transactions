@@ -7,7 +7,7 @@ import { ApiContext } from './ApiContext';
 
 function CustomerTable() {
     
-    const {margeData,customers,transactions} = useContext(ApiContext)
+    const {margeData} = useContext(ApiContext)
     const [searchTerm,setSearchTerm] = useState([])
     const [filteredCustomers,setFilteredCustomers] = useState([])
    
