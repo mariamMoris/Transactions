@@ -11,9 +11,9 @@ import Layout from './Layout';
 const App = () => {
     const router = createBrowserRouter([
         {path:"",element:<Layout/>,children:[
-            {path:"Transactions",element:<CustomerTable/>},
+            {path:"Transactions",element:<Navigate to={"home"}/>},
             {path:"",element:<Navigate to={"home"}/>},
-            {path:"home",element:<Navigate to={"home"}/>},
+            {path:"home",element:<CustomerTable/>},
             {path:"chart",element:<FilterCustomer/>}
         ]}
     ])
